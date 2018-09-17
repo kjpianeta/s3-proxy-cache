@@ -1,0 +1,13 @@
+version: "2"
+services:
+  s3-cache-proxy:
+    container_name: 's3-cache-proxy'
+    hostname: 's3-cache-proxy'
+    restart: 'always'
+    dns: '10.0.0.2'
+    network_mode: 'host'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_DEFAULT_REGION
